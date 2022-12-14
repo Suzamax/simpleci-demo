@@ -1,0 +1,4 @@
+.git/
+.simple-ci/
+*.log
+owasp/*

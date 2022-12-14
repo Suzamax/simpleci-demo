@@ -1,0 +1,31 @@
+---
+variables:
+  GLOBAL_VAR: "last"
+
+stages:
+  - stage1
+  - stage2
+
+stage1:
+  variables:
+    MYVAR: "second"
+  jobs:
+    - job1
+    - job2
+
+stage2:
+  jobs:
+    - job3
+
+job1:
+  script:
+    - echo "This is the first job."
+
+job2:
+  script:
+    - echo "This is the $MYVAR job."
+
+job3:
+  script:
+   # - curl -O -X GET "https://pokeapi.co/api/v2/pokemon/rayquaza" 
+    - 
